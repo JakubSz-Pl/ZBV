@@ -1,0 +1,6 @@
+Git to system kontroli wersji ktory służy do ulatwiania pracy nad projektem szczególnie w wiekszych zespołach.
+
+Commit - zapisuje zmianny i aktualny stan projektu i informacje o wprowadzonych zmiannach.
+Branch - osobna gałąź projektu dzięki ktorym mozna testowac nowe zmiany bez wprowadzania ich na glowny projekt.
+Merge - łączy brancha z inna gałęzią.
+Checkout - Pozwala przełączać się miedzy branchami
