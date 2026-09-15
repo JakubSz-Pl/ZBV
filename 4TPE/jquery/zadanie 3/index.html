@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous"></script>
+
+      <script>
+        $(function(){
+            $('#test').on("click", function(){
+                console.log("Nasz event")
+            })
+        
+            $('#test').click(function(){
+                console.log("Nasz event 2")
+            })
+
+
+        })
+
+    </script>
+        <style>
+         #kwadrat { width: 150px; height: 150px; background: lightgray; }
+    </style>
+</head>
+<body>
+  <button id="przywitaj">Przywitaj się</button>
+    <button id="resetuj">Resetuj</button>
+  <p id="komunikat"></p>
+   <p id="licznik"></p>
+  <div id="kwadrat"></div>
+  <script>
+    let a = 0;
+            $('#przywitaj').click(function(){
+                alert("czesc")
+                $("#komunikat").text("czesc");
+            })
+
+            $('#kwadrat').click(function(){
+                $("#kwadrat").css("background-color","red");
+                a++;
+                $("#licznik").text(a);
+
+            })
+            $('#resetuj').click(function(){
+                $("#komunikat").text("")
+                $("#kwadrat").css("background-color","grey");
+            })
+
+                        $('#resetuj').click(function(){
+                $("#komunikat").text("")
+                $("#kwadrat").css("background-color","grey");
+            })
+  </script>
+</body>
+</html>
