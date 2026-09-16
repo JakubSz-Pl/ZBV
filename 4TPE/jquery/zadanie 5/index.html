@@ -31,6 +31,14 @@
 <button id="naKoniec">Dodaj na koniec</button>
 <button id="naPoczatek">Dodaj na początek</button>
 
+<br>
+
+<input type="checkbox" id="answer" name="answer">
+<label for="answer">Zgadzam sie na wyslanie</label><br>
+<button id="send" disabled>Wyslij</button>
+
+
+
 
 
   <script>
@@ -50,10 +58,23 @@
                     if(inputValue.length != 0){
                         $("ul").prepend("<li>");
                         $("li").first().text(inputValue);
-                        $("li").first().css("color","green")
+                        $("li").first().css({
+                        "color":"green",
+                        "font-weight":"bold"
+                        })
                     }
                     $("#produkt").val("")
             })
+
+              $('#answer').change(function(){
+
+                    if(this.checked){
+                      $("#send").removeAttr("disabled")
+                    }else{
+                      $("#send").attr("disabled","disabled")
+                    }
+              })
+
   </script>
 </body>
 </html>
