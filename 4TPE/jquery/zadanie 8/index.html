@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous"></script>
+
+      <script>
+
+        $(function(){
+
+        $("#zmien").on("click",function(){
+            $("p").text("Nowy tekst")
+        })
+
+        $("#przelacz").on("click",function(){
+            $("div").toggle();
+            
+        })
+        $("#tekst").on("click",function(){
+            $("#tekst").toggleClass("podswietlony");
+        })
+
+        $("#przywitaj").on("click",function(){
+
+            if($("#imie").val().trim() !== ""){
+                $("#wynik").text("Czesc "+$("#imie").val());
+            }
+            
+        })
+
+        $("#przywitaj").on("click",function(){
+
+            if($("#imie").val().trim() !== ""){
+                $("#wynik").text("Czesc "+$("#imie").val());
+            }
+            
+        })
+
+        $("#akceptuje").change(function(){
+
+            if(this.checked){
+                $("#wyslij").removeAttr("disabled");
+            }else{
+                $("#wyslij").attr("disabled","disabled")
+            }
+            
+        })
+
+        })
+
+
+
+    </script>
+    <style>
+        .podswietlony{background-color: yellow;}
+
+    </style>
+
+
+</head>
+<body>
+    <div id="pudelko">Widisz mnie</div>
+    <button id="przelacz">Pokaz/ukryj</button>
+
+    <p  id="tekst">Stary tekst</p>
+    <button id="zmien">Zmień</button>
+
+
+    <input type="text" id="imie">
+    <button id="przywitaj">Przywitaj</button>
+    <p id="wynik"></p>
+
+    <label><input type="checkbox" id="akceptuje">Akceptuje regulamin</label>
+    <button id="wyslij" disabled>wyslij</button>
+
+
+    <ul id="menu">
+        <li>Strona glowna</li>
+        <li>O nas</li>
+        <li>Kontakt</li>
+    </ul>
+    
+
+    
+</body>
+</html>
