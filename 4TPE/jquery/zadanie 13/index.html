@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script
+  src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous">
+</script>
+<script>
+$(function(){
+    $("#sprawdz").click(function(){
+        
+    if($("#nazwisko").val().trim() === ""){
+        $("#wiadmosc").text("Podaj nazwisko")
+        $("#wiadmosc").css("color","red")
+    }else{
+        $("#wiadmosc").text("Wyslano formularz")
+        $("#wiadmosc").css("color","green")
+    }
+    })
+    
+
+    $("#zapisz").click(function(){
+        let ocena = $("#ocena").val();
+
+
+    if(ocena.trim() === ""){
+        $("#wiadomoscOcena").text("Pole puste")
+    }
+    else if(isNaN(ocena)){
+        $("#wiadomoscOcena").text("Ocena musi byc liczba")
+
+    }else if(ocena<1 || ocena>6) {
+        $("#wiadomoscOcena").text("Ocena musi byc od 1 do 6")
+    } else {
+        $("#wiadomoscOcena").text("Zapisano ocene: "+ocena)
+    }
+
+    })
+
+
+    
+})
+
+
+
+</script>
+<style> 
+
+</style>
+
+</head>
+<body>
+    <p>Podaj nazwisko</p>
+    <input type="text" name="nazwisko" id="nazwisko">
+    <input type="button" name="sprawdz" id="sprawdz">Wyslij</input>
+    <p id="wiadmosc"></p>
+    <hr>
+
+    <input type="text" name="ocena" id="ocena">
+    <input type="button" name="zapisz" id="zapisz">Wyslij
+    <p id="wiadomoscOcena">Ocena</p>
+</body>
+</html>

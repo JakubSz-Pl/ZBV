@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script
+  src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous">
+</script>
+<script>
+$(function(){
+    $("#formularz").submit(function(e){
+        e.preventDefault()
+        if($("#haslo").val().length > 6){
+            $("#info").text("Zalogowano Poprawnie")
+            $("#info").css("color","green")
+        }else{
+            $("#info").text("Nie zalogowano")
+            $("#info").css("color","red")
+        }
+    })
+    $("#kolor").change(function(){
+        $("body").css("background-color",$(this).val())
+    })
+    $("#rozmiar").change(function(){
+        $("#cena").text("Cena do zaplaty: "+$(this).val())
+    })
+
+})
+
+
+
+
+
+</script>
+<style> 
+
+</style>
+
+</head>
+<body>
+<form id="formularz">
+    <label for="email">Mail: </label>
+    <input type="text" id="email">
+    <label for="haslo">haslo: </label>
+    <input type="text" id="haslo">
+    <button type="submit">Wyslij</button>
+</form>
+<p id="info"></p>
+
+<hr>
+    <select id="kolor">
+        <option value="white">Bialy</option>
+        <option value="yellow">Zolty</option>
+        <option value="lightblue">Niebieski</option>
+    </select>
+<hr>
+    <select id="rozmiar">
+        <option value="20">Mala</option>
+        <option value="30">Srednia</option>
+        <option value="40">Duza</option>
+    </select>
+<p id="cena">Cena do zaplaty:</p>
+
+
+</body>
+</html>

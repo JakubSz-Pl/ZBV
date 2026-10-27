@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script
+  src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous">
+</script>
+<script>
+$(function(){
+    $("#regulamin").change(function(){
+        if($(this).is(":checked")){
+            $("#zarejestruj").prop("disabled",false)
+        }else{
+            $("#zarejestruj").prop("disabled",true)
+        }
+    })
+    $("#tekst").on("input",function(){
+        
+    })
+})
+
+
+
+</script>
+<style> 
+
+</style>
+
+</head>
+<body>
+    <hr>
+        
+    <hr>
+<input type="checkbox" id="regulamin"> Akceptuje regulamin</input>
+<button id="zarejestruj" disabled>ZAREJESTRUJ</button>
+<p id="stan"></p>
+<hr>
+<textarea name="" id=""></textarea>
+
+</body>
+</html>

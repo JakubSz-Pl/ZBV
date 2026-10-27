@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+        
+    </script>
+    <script>
+$(function(){
+    $(document).keydown(function(e){
+        let wyszukanie = $("#szukaj").val().trim();
+        console.log(e.key)
+    if(e.key == "Enter"){
+       if(wyszukanie === ""){
+            $("#wynik").text("Wpisz frazę").css("color","red");
+       }else{
+            $("#wynik").text("Szukanie["+wyszukanie+"]").css("color","black");
+       }
+    }
+    if(e.key == "Escape"){
+        $("#wynik").text("");
+    }
+    })
+    
+
+
+$("#haslo").on("input",function(){
+    let silaHasla = $("#haslo").val().trim();
+
+    if(silaHasla.length <6){
+        $("#sila").text("Slabe").addClass("slabe");
+        $("#sila").removeClass("srednie");
+        $("#sila").removeClass("mocne");
+    } else if(silaHasla.length >=6 && silaHasla.length <=9) {
+        $("#sila").text("Srednie").addClass("srednie");
+        $("#sila").removeClass("slabe");
+        $("#sila").removeClass("mocne");
+    }else{
+        $("#sila").text("Silne").addClass("mocne");
+        $("#sila").removeClass("slabe");
+        $("#sila").removeClass("srednie");
+    }
+    })
+})
+
+
+
+    </script>
+</head>
+<body>
+<style>
+    .slabe{
+        color: red;
+    }
+    .srednie{
+        color: yellow;
+    }
+    .mocne{
+        color: green;
+    }
+</style>
+
+
+    <input type="text" id="szukaj" placeholder="Szukaj...">
+    <p id="wynik"></p>
+<hr>
+    <input type="password" id="haslo">
+    <p id="sila"></p>
+<hr>
+<form id="logowanie">
+  <input type="text" id="login" placeholder="Login">
+  <input type="password" id="pass" placeholder="Hasło">
+  <button type="submit">Zaloguj</button>
+</form>
+<p id="info"></p>
+</body>
+</html>
